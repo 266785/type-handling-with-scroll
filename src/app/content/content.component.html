@@ -1,0 +1,17 @@
+<input #searchInput (keyup)="onKeyUp()" [(ngModel)]="params.search">
+<button (click)="onClick()">Search</button>
+
+<table>
+  <tr>
+    <td (click)="onSort('name')">Name</td>
+    <td (click)="onSort('surname')">Surname</td>
+    <td (click)="onSort('date')">Age</td>
+  </tr>
+</table>
+
+<app-page [students]="students"></app-page>
+<p>Page: {{params.page}}</p>
+<button (click)="previousPage()"><</button>
+<button (click)="nextPage()">></button>
+
+
