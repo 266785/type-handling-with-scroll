@@ -1,6 +1,6 @@
-<input #searchInput (keyup)="onKeyUp()" [(ngModel)]="params.search">
+<input (keyup)="onKeyUp()" [(ngModel)]="params.search">
 <button (click)="onClick()">Search</button>
-
+<div (wheel)="scroll($event)">
 <table>
   <tr>
     <td (click)="onSort('name')">Name</td>
@@ -10,8 +10,6 @@
 </table>
 
 <app-page [students]="students"></app-page>
-<p>Page: {{params.page}}</p>
-<button (click)="previousPage()"><</button>
-<button (click)="nextPage()">></button>
+</div>
 
 
